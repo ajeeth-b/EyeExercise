@@ -6,30 +6,31 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import EyeChart from './EyeChart.js';
+var Alphanumeric = function (_React$Component) {
+    _inherits(Alphanumeric, _React$Component);
 
-var App = function (_React$Component) {
-    _inherits(App, _React$Component);
+    function Alphanumeric(props) {
+        _classCallCheck(this, Alphanumeric);
 
-    function App(props) {
-        _classCallCheck(this, App);
+        var _this = _possibleConstructorReturn(this, (Alphanumeric.__proto__ || Object.getPrototypeOf(Alphanumeric)).call(this, props));
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+        _this.alnum = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        _this.alnum = _this.alnum[Math.floor(Math.random() * _this.alnum.length)];
+        return _this;
     }
 
-    _createClass(App, [{
+    _createClass(Alphanumeric, [{
         key: 'render',
         value: function render() {
-
             return React.createElement(
                 'div',
-                null,
-                React.createElement(EyeChart, null)
+                { style: { fontSize: this.props.size + 'px', textAlign: 'center' } },
+                this.alnum
             );
         }
     }]);
 
-    return App;
+    return Alphanumeric;
 }(React.Component);
 
-export default App;
+export default Alphanumeric;
